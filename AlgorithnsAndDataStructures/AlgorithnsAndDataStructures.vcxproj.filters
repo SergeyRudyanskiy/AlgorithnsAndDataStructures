@@ -13,10 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Algorithms_Sort">
+      <UniqueIdentifier>{a49825fa-9ac4-4d21-850b-9ddd0a521e94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Algorithms_Search">
+      <UniqueIdentifier>{c6cdb5dd-46ca-4b98-8858-651f97d2e21e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Functional_Other">
+      <UniqueIdentifier>{9bbe10e6-f513-40e2-b6bc-73e5f30cb79e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Data_Structures">
+      <UniqueIdentifier>{22e3a5f4-5393-4d70-a563-3e41618e9bbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithnsAndDataStructures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ImplementationStack.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sort_Bubble.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Select.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper_Sort.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Insert.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Linear.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Binary_Itarative.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Binary_Recursive.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Maximum.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Minimum.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Swap.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Display_Data.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="ImplementationStack.h">
+      <Filter>Файлы заголовков\Data_Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="TODO.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

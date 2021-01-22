@@ -140,6 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithnsAndDataStructures.cpp" />
+    <ClCompile Include="ImplementationStack.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Display_Data.hpp" />
+    <ClInclude Include="TODO.hpp" />
+    <ClInclude Include="Helper_Sort.hpp" />
+    <ClInclude Include="ImplementationStack.h" />
+    <ClInclude Include="Search_Element_Binary_Itarative.hpp" />
+    <ClInclude Include="Search_Element_Binary_Recursive.hpp" />
+    <ClInclude Include="Search_Element_Linear.hpp" />
+    <ClInclude Include="Search_Element_Maximum.hpp" />
+    <ClInclude Include="Search_Element_Minimum.hpp" />
+    <ClInclude Include="Sort_Bubble.hpp" />
+    <ClInclude Include="Sort_Insert.hpp" />
+    <ClInclude Include="Sort_Select.hpp" />
+    <ClInclude Include="Swap.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
