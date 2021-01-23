@@ -1,6 +1,7 @@
 #pragma once
 #include "Helper_Sort.hpp"
 #include <functional>
+#include <type_traits>
 
 template<typename Iterator>
 void sort_insert(Iterator iterator_begin, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
@@ -18,8 +19,8 @@ void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
     sort_insert(iterator_begin, iterator_end, order_ascendant);
 }
 
-/// Insertion Sort with default less-than operator
-//template <typename iterator>
-//void sort_insert(iterator first, iterator last) {
-//    sort_insert(first, last, std::less<typename std::iterator_traits<iterator>::value_type>());
+// Insertion Sort with default less-than operator
+//template <typename Iterator>
+//void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
+//    sort_insert(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>());
 //}

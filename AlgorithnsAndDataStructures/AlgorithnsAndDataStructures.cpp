@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 #include <vector>
-#include <iterator>
-#include <type_traits>
-#include <typeinfo>
+//#include <iterator>
+//#include <type_traits>
+//#include <typeinfo>
 
 #include "Display_Data.hpp"
 #include "Sort_Merge_Recursive.hpp"
@@ -25,7 +25,7 @@ int main() {
 
     std::vector<int16_t> vt = { 0, 5, 8, 58, 100, 0, 1, 3, } ;
 
-    function_merge(vt.begin(), vt.begin() + 5, vt.end());
+    function_merge(vt.begin(), vt.begin() + 5, vt.end(), order_ascendant);
     
     print_array_element(vt.begin(), vt.end());
     sort_merge_recursive(vi.begin(), vi.end());
