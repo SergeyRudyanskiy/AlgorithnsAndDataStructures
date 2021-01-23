@@ -2,7 +2,7 @@
 #include "Helper_Sort.hpp"
 #include <functional>
 
-template <typename Iterator>
+template<typename Iterator>
 void sort_insert(Iterator iterator_begin, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
     if (iterator_begin == iterator_end) { return; }
 
@@ -13,7 +13,7 @@ void sort_insert(Iterator iterator_begin, Iterator iterator_end, bool (*function
     }
 }
 
-template <typename Iterator>
+template<typename Iterator>
 void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
     sort_insert(iterator_begin, iterator_end, order_ascendant);
 }
