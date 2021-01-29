@@ -77,5 +77,8 @@
     <ClInclude Include="Sort_Merge_Recursive.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
+    <ClInclude Include="Sort_Merge_Iterative.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
