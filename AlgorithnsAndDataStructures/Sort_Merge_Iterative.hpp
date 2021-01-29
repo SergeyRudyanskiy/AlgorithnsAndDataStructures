@@ -32,13 +32,9 @@ void sort_merge_iterative(const Iterator iterator_begin, const Iterator iterator
     if (iterator_begin == iterator_end || iterator_begin + 1 == iterator_end) { return; }
 
     for (auto curent_size_partition = 1; curent_size_partition < iterator_end - iterator_begin; curent_size_partition *= 2) {
-        for (auto curent_index = 0; curent_index + curent_size_partition < iterator_end - iterator_begin; curent_index += 2 * curent_size_partition) { // revrite for iterator
-            //Iterator iterator_partition_begin = iterator_begin;
-            //iterator_partition_begin != iterator_end;
-            //iterator_partition_begin = std::next(iterator_partition_begin, 2 * curent_size_partition);
-
+        for (auto curent_index = 0; curent_index + curent_size_partition < iterator_end - iterator_begin; curent_index += 2 * curent_size_partition) {
             Iterator iterator_partition_begin = std::next(iterator_begin, curent_index);
-            Iterator iterator_partiton_midle  = std::next(iterator_begin, curent_index + curent_size_partition);
+            Iterator iterator_partiton_midle  = std::next(iterator_begin, std::min(curent_index + curent_size_partition, iterator_end - iterator_begin));
             Iterator iterator_partition_end   = std::next(iterator_begin, std::min(curent_index + 2 * curent_size_partition, iterator_end - iterator_begin));
 
             function_merge_two_way(iterator_partition_begin, iterator_partiton_midle, iterator_partition_end, function_comparation);
