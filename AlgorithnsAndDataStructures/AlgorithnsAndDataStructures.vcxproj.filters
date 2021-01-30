@@ -80,5 +80,8 @@
     <ClInclude Include="Sort_Quick_Recursive.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
+    <ClInclude Include="Function_Rotate.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

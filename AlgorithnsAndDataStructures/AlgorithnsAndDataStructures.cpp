@@ -7,6 +7,7 @@
 #include "Sort_Merge_Iterative.hpp"
 #include "Sort_Merge_Recursive.hpp"
 #include "Sort_Select.hpp"
+#include "Function_Rotate.hpp"
 
 int main() {
     std::vector<int16_t> vi = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
@@ -16,7 +17,8 @@ int main() {
     print_data(vi.begin(), vi.end());
 
     vi = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_merge_iterative(vi.begin(), vi.end());
+    function_rotate(vi.begin(), vi.begin() + 5, vi.end());
+    //sort_merge_iterative(vi.begin(), vi.end());
     print_data(vi);
 
     std::cout << "Hello World!\n";
