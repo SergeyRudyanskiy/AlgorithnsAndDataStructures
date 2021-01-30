@@ -142,12 +142,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithnsAndDataStructures.cpp" />
-    <ClCompile Include="ImplementationStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Display_Data.hpp" />
     <ClInclude Include="Sort_Merge_Iterative.hpp" />
     <ClInclude Include="Sort_Merge_Recursive.hpp" />
+    <ClInclude Include="Sort_Quick_Recursive.hpp" />
     <ClInclude Include="TODO.hpp" />
     <ClInclude Include="Helper_Sort.hpp" />
     <ClInclude Include="ImplementationStack.h" />

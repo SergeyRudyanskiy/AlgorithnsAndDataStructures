@@ -30,9 +30,6 @@
     <ClCompile Include="AlgorithnsAndDataStructures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ImplementationStack.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sort_Bubble.hpp">
@@ -78,6 +75,9 @@
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
     <ClInclude Include="Sort_Merge_Iterative.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Quick_Recursive.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
   </ItemGroup>
