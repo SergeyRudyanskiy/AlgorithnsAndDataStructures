@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Display_Data.hpp" />
+    <ClInclude Include="Function_Reverse.hpp" />
     <ClInclude Include="Function_Rotate.hpp" />
     <ClInclude Include="Sort_Merge_Iterative.hpp" />
     <ClInclude Include="Sort_Merge_Recursive.hpp" />
