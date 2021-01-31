@@ -86,5 +86,11 @@
     <ClInclude Include="Function_Reverse.hpp">
       <Filter>Файлы заголовков\Functional_Other</Filter>
     </ClInclude>
+    <ClInclude Include="Function_Bound_Upper.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Function_Bound_Lower.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
