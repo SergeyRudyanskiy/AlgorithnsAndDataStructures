@@ -17,15 +17,11 @@ Iterator function_partition(Iterator iterator_begin, Iterator iterator_end, Comp
 }
 
 template<typename Iterator, typename Comparator>
-void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
-    if (std::distance(iterator_begin, iterator_end) > 1) { 
-        Iterator iterator_pivot = std::move(function_partition(iterator_begin, iterator_end, function_comparation));
-        sort_quick_recursive(iterator_begin, iterator_pivot - 1, function_comparation); // iterator_pivot - 1 => iterator_pivot
-        sort_quick_recursive(iterator_pivot + 1, iterator_end, function_comparation);
-    }
+void sort_quick_iterative(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+    
 }
 
 template<typename Iterator>
-void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end) {
-    sort_quick_recursive(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
+void sort_quick_iterative(Iterator iterator_begin, Iterator iterator_end) {
+    sort_quick_iterative(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }

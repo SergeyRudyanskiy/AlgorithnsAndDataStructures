@@ -92,5 +92,11 @@
     <ClInclude Include="Function_Bound_Lower.hpp">
       <Filter>Файлы заголовков\Functional_Other</Filter>
     </ClInclude>
+    <ClInclude Include="Sort_Quick_Iterative.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Count.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
