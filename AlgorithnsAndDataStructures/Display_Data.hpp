@@ -10,5 +10,5 @@ void print_data(Iterator iterator_begin, Iterator iterator_end, const char* cons
 
 template<typename Container>
 void print_data(const Container& container, const char* const separator = " ") {
-    print_data(std::begin(container), std::end(container));
+    print_data(std::begin(container), std::end(container), separator);
 }

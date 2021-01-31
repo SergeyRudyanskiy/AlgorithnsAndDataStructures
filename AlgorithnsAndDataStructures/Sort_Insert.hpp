@@ -1,26 +1,20 @@
 #pragma once
 #include "Helper_Sort.hpp"
-#include <functional>
 #include <type_traits>
+#include <iterator>
 
-template<typename Iterator>
-void sort_insert(Iterator iterator_begin, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
+template<typename Iterator, typename Comparator>
+void sort_insert(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
     if (iterator_begin == iterator_end) { return; }
 
-    for (Iterator iterator_curent = iterator_begin + 1; iterator_curent != iterator_end; ++iterator_curent) {
-        for (Iterator temporary = iterator_curent; temporary != iterator_begin && function_comparation(temporary - 1, temporary); --temporary) {
-            std::iter_swap(temporary - 1, temporary);
+    for (Iterator iterator_curent = std::next(iterator_begin); iterator_curent != iterator_end; std::advance(iterator_curent, 1)) {
+        for (Iterator iterator_temporary = iterator_curent; iterator_temporary != iterator_begin && function_comparation(*iterator_temporary, *std::prev(iterator_temporary)); std::advance(iterator_temporary, -1)) {
+            std::iter_swap(iterator_temporary, std::prev(iterator_temporary));
         }
     }
 }
 
 template<typename Iterator>
 void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
-    sort_insert(iterator_begin, iterator_end, order_ascendant);
+    sort_insert(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }
-
-// Insertion Sort with default less-than operator
-//template <typename Iterator>
-//void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
-//    sort_insert(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>());
-//}

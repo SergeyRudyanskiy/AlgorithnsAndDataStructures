@@ -1,13 +1,14 @@
 #pragma once
 #include "Helper_Sort.hpp"
+#include <iterator>
 
-template<typename Iterator>
-void inline sort_bubble(Iterator iterator_begin, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
+template<typename Iterator, typename Comparator>
+void inline sort_bubble(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
 	for (bool flag_swap_event = true; flag_swap_event && iterator_begin != iterator_end; ++iterator_begin) {
 		flag_swap_event = false;
-		for (Iterator iterator_current = iterator_begin + 1u; iterator_current != iterator_end; ++iterator_current) {
-			if (function_comparation(iterator_begin, iterator_current)) {
-				std::iter_swap(iterator_begin, iterator_current);
+		for (Iterator iterator_current = std::next(iterator_begin); iterator_current != iterator_end; std::advance(iterator_current, 1)) {
+			if (function_comparation(*iterator_current, *iterator_begin)) {
+				std::iter_swap(iterator_current, iterator_begin);
 				flag_swap_event = true;
 			}
 		}
@@ -16,32 +17,6 @@ void inline sort_bubble(Iterator iterator_begin, Iterator iterator_end, bool (*f
 
 template <typename Iterator>
 void sort_bubble(Iterator iterator_begin, Iterator iterator_end) {
-	sort_bubble(iterator_begin, iterator_end, order_ascendant);
+	sort_bubble(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }
-
-//template<typename Iterartor, typename Predicate>
-//void inline sort_bubble(Iterartor iterator_begin, Iterartor iterator_end, Predicate& function_comparation) {
-//	for (bool flag_swap_event = true; flag_swap_event && iterator_begin != iterator_end; ++iterator_begin) {
-//		flag_swap_event = false;
-//		for (Iterartor iterator_current = iterator_begin + 1; iterator_current != iterator_end; ++iterator_current) {
-//			if (function_comparation(*iterator_begin, *iterator_current)) {
-//				std::iter_swap(iterator_begin, iterator_current);
-//				flag_swap_event = true;
-//			}
-//		}
-//	}
-//}
-
-//template<typename Iterartor>
-//void inline sort_bubble(Iterartor iterator_begin, Iterartor iterator_end, bool (*function_comparation)(Iterartor a, Iterartor b)) {
-//	for (bool flag_swap_event = true; flag_swap_event && iterator_begin != iterator_end; ++iterator_begin) {
-//		flag_swap_event = false;
-//		for (Iterartor iterator_current{ iterator_begin }; ++iterator_current != iterator_end;) {
-//			if (function_comparation(iterator_begin, iterator_current)) {
-//				std::iter_swap(iterator_begin, iterator_current);
-//				flag_swap_event = true;
-//			}
-//		}
-//	}
-//}
 

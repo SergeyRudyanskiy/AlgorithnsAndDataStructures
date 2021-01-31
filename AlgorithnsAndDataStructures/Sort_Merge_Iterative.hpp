@@ -31,8 +31,8 @@ template<typename Iterator, typename Comparator>
 void sort_merge_iterative(const Iterator iterator_begin, const Iterator iterator_end, Comparator function_comparation) {
     if (iterator_begin == iterator_end || iterator_begin + 1 == iterator_end) { return; }
 
-    for (size_t curent_size_partition = 1; curent_size_partition < std::distance(iterator_begin, iterator_end); curent_size_partition *= 2) {
-        for (size_t curent_index = 0; curent_index + curent_size_partition < std::distance(iterator_begin, iterator_end); curent_index += 2 * curent_size_partition) {
+    for (ptrdiff_t curent_size_partition = 1; curent_size_partition < iterator_end - iterator_begin; curent_size_partition *= 2) {
+        for (ptrdiff_t curent_index = 0; curent_index + curent_size_partition < iterator_end - iterator_begin; curent_index += 2 * curent_size_partition) {
             Iterator iterator_partition_begin = std::next(iterator_begin, curent_index);
             Iterator iterator_partition_midle = std::next(iterator_begin, std::min(curent_index + curent_size_partition, iterator_end - iterator_begin));
             Iterator iterator_partition_end   = std::next(iterator_begin, std::min(curent_index + 2 * curent_size_partition, iterator_end - iterator_begin));

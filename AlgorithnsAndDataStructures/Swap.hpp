@@ -19,9 +19,9 @@ void swap_move(ElementType& element_first, ElementType& element_second) {
 // integer overflow
 template<typename ElementType>
 void swap_addition(ElementType& element_first, ElementType& element_second) {
-	element_first -= element_second;
-	element_second += element_first;				// b gets the original value of a
-	element_first = element_second - element_first;	// a gets the original value of b
+	element_first  -= element_second;
+	element_second += element_first;					// b gets the original value of a
+	element_first  =  element_second - element_first;	// a gets the original value of b
 }
 
 // integer overflow

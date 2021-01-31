@@ -3,9 +3,10 @@
 #include <functional>
 #include <vector>
 #include <type_traits>
+#include <iterator>
 
-template<typename Iterator>
-void function_merge(Iterator iterator_begin, Iterator iterator_midle, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
+template<typename Iterator, typename Comparator>
+void function_merge(Iterator iterator_begin, Iterator iterator_midle, Iterator iterator_end, Comparator function_comparation) {
     std::vector<typename std::iterator_traits<Iterator>::value_type> range_left(iterator_begin, iterator_midle); //std::make_move_iterator(it) && range.reserve(std::distance(begin, end)) ??
     Iterator iterator_left_current = range_left.begin();
 
@@ -13,7 +14,7 @@ void function_merge(Iterator iterator_begin, Iterator iterator_midle, Iterator i
     Iterator iterator_right_current = range_right.begin();
 
     while(iterator_left_current != range_left.end() && iterator_right_current != range_right.end()) {
-        *iterator_begin++ = std::move(function_comparation(iterator_right_current, iterator_left_current) ? *iterator_left_current++ : *iterator_right_current++);
+        *iterator_begin++ = std::move(function_comparation(*iterator_left_current, *iterator_right_current) ? *iterator_left_current++ : *iterator_right_current++);
     }
 
     while (iterator_left_current < range_left.end()) { 
@@ -25,18 +26,17 @@ void function_merge(Iterator iterator_begin, Iterator iterator_midle, Iterator i
     }
 }
 
-template<typename Iterator>
-void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end, bool (*function_comparation)(const Iterator, const Iterator)) {
-	if (iterator_begin == iterator_end || iterator_begin + 1 == iterator_end) { return; }
-    //static const auto f_compare = function_comparation;
-
-    Iterator iterator_midle = iterator_begin + (iterator_end - iterator_begin) / 2;
-    sort_merge_recursive(iterator_begin, iterator_midle, function_comparation);
-    sort_merge_recursive(iterator_midle, iterator_end, function_comparation);
-    function_merge(iterator_begin, iterator_midle, iterator_end, function_comparation);
+template<typename Iterator, typename Comparator>
+void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+    if (std::distance(iterator_begin, iterator_end) > 1) {
+        Iterator iterator_midle = iterator_begin + (iterator_end - iterator_begin) / 2;
+        sort_merge_recursive(iterator_begin, iterator_midle, function_comparation);
+        sort_merge_recursive(iterator_midle, iterator_end, function_comparation);
+        function_merge(iterator_begin, iterator_midle, iterator_end, function_comparation);
+    }
 }
 
 template<typename Iterator>
 void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end) {
-    sort_merge_recursive(iterator_begin, iterator_end, order_ascendant);
+    sort_merge_recursive(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }
