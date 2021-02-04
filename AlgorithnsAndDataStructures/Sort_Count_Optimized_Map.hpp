@@ -5,10 +5,10 @@
 #include <type_traits>
 #include <map>
 
-template<typename Iterator, typename Comparator>
-void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = typename std::less<typename std::iterator_traits<Iterator>::value_type>>
+void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     using ElementType = typename std::iterator_traits<Iterator>::value_type;
-    std::map<ElementType, size_t> map_frequency;
+    std::map<ElementType, size_t, Comparator> map_frequency;
 
     for (Iterator iterator_curent = iterator_begin; iterator_curent != iterator_end; ++iterator_curent) {
         map_frequency[*iterator_curent]++;
@@ -19,17 +19,7 @@ void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator funct
     }
 }
 
-template<typename Iterator>
-void sort_count(Iterator iterator_begin, Iterator iterator_end) {
-    sort_count(iterator_begin, iterator_end, std::greater<typename std::iterator_traits<Iterator>::value_type>{});
-}
-
-template<typename Container, typename Comparator>
-void sort_count(Container& container, Comparator function_comparation) {
+template<typename Container, typename Comparator = typename std::less<typename std::iterator_traits<Container>::value_type>>
+void sort_count(Container& container, Comparator function_comparation = Comparator()) {
     sort_count(std::begin(container), std::end(container), function_comparation);
-}
-
-template<typename Container>
-void sort_count(Container& container) {
-    sort_count(container, std::greater<>{});
 }
