@@ -101,5 +101,11 @@
     <ClInclude Include="Search_Element_Minimum_Maximum.hpp">
       <Filter>Файлы заголовков\Algorithms_Search</Filter>
     </ClInclude>
+    <ClInclude Include="Sort_Count_Optimized.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Count_Optimized_Map.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

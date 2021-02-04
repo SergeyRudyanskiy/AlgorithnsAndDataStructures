@@ -62,6 +62,9 @@ void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator funct
         while (vector_frequency.at(index_curent_frequency_element)--) {
             *iterator_begin++ = static_cast<typename std::iterator_traits<Iterator>::value_type>(index_curent_frequency_element) + *iterator_minimum;
         }
+
+        //std::fill(iterator_begin, iterator_begin + vector_frequency.at(index_curent_frequency_element), index_curent_frequency_element + *iterator_minimum);
+        //std::advance(iterator_begin, vector_frequency.at(index_curent_frequency_element));
     }
 }
 

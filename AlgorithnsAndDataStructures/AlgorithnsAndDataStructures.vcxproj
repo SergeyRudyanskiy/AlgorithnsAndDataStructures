@@ -151,6 +151,8 @@
     <ClInclude Include="Function_Rotate.hpp" />
     <ClInclude Include="Search_Element_Minimum_Maximum.hpp" />
     <ClInclude Include="Sort_Count.hpp" />
+    <ClInclude Include="Sort_Count_Optimized.hpp" />
+    <ClInclude Include="Sort_Count_Optimized_Map.hpp" />
     <ClInclude Include="Sort_Merge_Iterative.hpp" />
     <ClInclude Include="Sort_Merge_Recursive.hpp" />
     <ClInclude Include="Sort_Quick_Iterative.hpp" />
