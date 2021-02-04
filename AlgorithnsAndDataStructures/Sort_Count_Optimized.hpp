@@ -39,5 +39,5 @@ void sort_count(Container& container, Comparator function_comparation) {
 
 template<typename Container>
 void sort_count(Container& container) {
-    sort_count(container, std::less<>{});
+    sort_count(container, std::greater<>{});
 }
