@@ -14,7 +14,7 @@ void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator funct
         map_frequency[*iterator_curent]++;
     }
     
-    for (typename std::map<ElementType, size_t>::iterator iterator_curent = map_frequency.begin(); iterator_curent != map_frequency.end(); ++iterator_curent) {
+    for (typename std::map<ElementType, size_t, Comparator>::iterator iterator_curent = map_frequency.begin(); iterator_curent != map_frequency.end(); ++iterator_curent) {
         iterator_begin = std::fill_n(iterator_begin, iterator_curent->second, iterator_curent->first);
     }
 }

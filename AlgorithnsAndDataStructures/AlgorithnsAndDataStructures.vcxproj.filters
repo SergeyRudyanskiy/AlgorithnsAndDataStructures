@@ -30,6 +30,9 @@
     <ClCompile Include="AlgorithnsAndDataStructures.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Tree_Binary.cpp">
+      <Filter>Файлы заголовков\Data_Structures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sort_Bubble.hpp">
@@ -106,6 +109,18 @@
     </ClInclude>
     <ClInclude Include="Sort_Count_Optimized_Map.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Base.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Binary.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Decimal.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree_Binary.hpp">
+      <Filter>Файлы заголовков\Data_Structures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
