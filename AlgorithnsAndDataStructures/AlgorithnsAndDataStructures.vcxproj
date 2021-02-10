@@ -158,7 +158,6 @@
     <ClInclude Include="Sort_Merge_Recursive.hpp" />
     <ClInclude Include="Sort_Quick_Iterative.hpp" />
     <ClInclude Include="Sort_Quick_Recursive.hpp" />
-    <ClInclude Include="Sort_Radix_Base.hpp" />
     <ClInclude Include="Sort_Radix_Binary.hpp" />
     <ClInclude Include="Sort_Radix_Decimal.hpp" />
     <ClInclude Include="TODO.hpp" />
