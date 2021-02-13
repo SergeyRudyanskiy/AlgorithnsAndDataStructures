@@ -20,7 +20,7 @@ public:
 
     void set_significant_bit(uint16_t offset_bit) { significant_bit = offset_bit; };
 protected:
-    uint16_t significant_bit;
+    int16_t significant_bit;
 };
 
 template<typename ElementType>
@@ -41,7 +41,7 @@ public:
     ComparatorRadixGreater(uint16_t offset_bit) : ComparatorRadix<ElementType>(offset_bit) {};
 
     bool operator()(ElementType value) const {                                                                                // sign bit
-        return (this->significant_bit == (bit_size(*value) - 1u)) ? *value > 0 : (*value & (1 << this->significant_bit));        // positive int to left partition
+        return (this->significant_bit == (bit_size(value) - 1u)) ? value >= 0 : (value & (1 << this->significant_bit));        // positive int to left partition
     }                                                                                                                         // 0 bit to right partition
 };
 
@@ -68,7 +68,7 @@ template <typename Iterator, typename Comparator = ComparatorRadixLess<typename 
 void sort_radix_msd(Iterator iterator_begin, Iterator iterator_end, Comparator class_comparator = Comparator(), uint8_t curent_most_significant_bit = sizeof(typename std::iterator_traits<Iterator>::value_type) * BITS_PER_BYTE - 1u) {
     class_comparator.set_significant_bit(curent_most_significant_bit);
     if (iterator_begin != iterator_end && curent_most_significant_bit > 0) {
-        Iterator iterator_midle = std::stable_partition(iterator_begin, iterator_end, class_comparator);
+        Iterator iterator_midle = std::partition(iterator_begin, iterator_end, class_comparator);
         --curent_most_significant_bit;                                                                 // decrement most-significant-bit
         sort_radix_msd(iterator_begin, iterator_midle, class_comparator, curent_most_significant_bit); // sort left partition
         sort_radix_msd(iterator_midle, iterator_end, class_comparator, curent_most_significant_bit);   // sort right partition
