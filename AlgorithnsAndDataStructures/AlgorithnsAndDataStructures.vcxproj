@@ -148,9 +148,12 @@
     <ClInclude Include="Display_Data.hpp" />
     <ClInclude Include="Function_Bound_Lower.hpp" />
     <ClInclude Include="Function_Bound_Upper.hpp" />
+    <ClInclude Include="Function_Calculate_Digit_Count.hpp" />
     <ClInclude Include="Function_Reverse.hpp" />
     <ClInclude Include="Function_Rotate.hpp" />
     <ClInclude Include="Search_Element_Minimum_Maximum.hpp" />
+    <ClInclude Include="Search_Element_Ternary_Iterative.hpp" />
+    <ClInclude Include="Search_Element_Ternary_Recursive.hpp" />
     <ClInclude Include="Sort_Count.hpp" />
     <ClInclude Include="Sort_Count_Optimized.hpp" />
     <ClInclude Include="Sort_Count_Optimized_Map.hpp" />
@@ -159,9 +162,11 @@
     <ClInclude Include="Sort_Quick_Iterative.hpp" />
     <ClInclude Include="Sort_Quick_Recursive.hpp" />
     <ClInclude Include="Sort_Radix_Binary.hpp" />
+    <ClInclude Include="Sort_Radix_Binary_Comparator_Class.hpp" />
+    <ClInclude Include="Sort_Radix_Binary_Least_Significant_Digit.hpp" />
+    <ClInclude Include="Sort_Radix_Binary_Most_Significant_Digit.hpp" />
     <ClInclude Include="Sort_Radix_Decimal.hpp" />
     <ClInclude Include="TODO.hpp" />
-    <ClInclude Include="Helper_Sort.hpp" />
     <ClInclude Include="ImplementationStack.h" />
     <ClInclude Include="Search_Element_Binary_Itarative.hpp" />
     <ClInclude Include="Search_Element_Binary_Recursive.hpp" />

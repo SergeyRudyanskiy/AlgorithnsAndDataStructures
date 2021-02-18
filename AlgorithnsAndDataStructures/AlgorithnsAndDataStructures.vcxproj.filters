@@ -41,9 +41,6 @@
     <ClInclude Include="Sort_Select.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
-    <ClInclude Include="Helper_Sort.hpp">
-      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
-    </ClInclude>
     <ClInclude Include="Sort_Insert.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
@@ -118,6 +115,24 @@
     </ClInclude>
     <ClInclude Include="Tree_Binary.hpp">
       <Filter>Файлы заголовков\Data_Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Binary_Least_Significant_Digit.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Binary_Most_Significant_Digit.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Binary_Comparator_Class.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Function_Calculate_Digit_Count.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Ternary_Iterative.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Ternary_Recursive.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
