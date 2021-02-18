@@ -1,5 +1,4 @@
 #pragma once
-#include "Helper_Sort.hpp"
 #include <functional>
 #include <vector>
 #include <type_traits>
@@ -26,8 +25,8 @@ void function_merge(Iterator iterator_begin, Iterator iterator_midle, Iterator i
     }
 }
 
-template<typename Iterator, typename Comparator>
-void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
+void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     if (std::distance(iterator_begin, iterator_end) > 1) {
         Iterator iterator_midle = iterator_begin + (iterator_end - iterator_begin) / 2;
         sort_merge_recursive(iterator_begin, iterator_midle, function_comparation);
@@ -36,7 +35,7 @@ void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end, Compar
     }
 }
 
-template<typename Iterator>
-void sort_merge_recursive(Iterator iterator_begin, Iterator iterator_end) {
-    sort_merge_recursive(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
+template<typename Container, typename Comparator = std::less<typename Container::value_type>>
+void sort_merge_recursive(Container& container, Comparator function_comparation = Comparator()) {
+    sort_merge_recursive(std::begin(container), std::end(container), function_comparation);
 }

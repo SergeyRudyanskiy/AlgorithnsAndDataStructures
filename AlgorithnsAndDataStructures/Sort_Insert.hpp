@@ -1,10 +1,9 @@
 #pragma once
-#include "Helper_Sort.hpp"
 #include <type_traits>
 #include <iterator>
 
-template<typename Iterator, typename Comparator>
-void sort_insert(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
+void sort_insert(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     if (iterator_begin == iterator_end) { return; }
 
     for (Iterator iterator_curent = std::next(iterator_begin); iterator_curent != iterator_end; std::advance(iterator_curent, 1)) {
@@ -14,7 +13,7 @@ void sort_insert(Iterator iterator_begin, Iterator iterator_end, Comparator func
     }
 }
 
-template<typename Iterator>
-void sort_insert(Iterator iterator_begin, Iterator iterator_end) {
-    sort_insert(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
+template<typename Container, typename Comparator = std::less<typename Container::value_type>>
+void sort_insert(Container& container, Comparator function_comparation = Comparator()) {
+    sort_insert(std::begin(container), std::end(container), function_comparation);
 }

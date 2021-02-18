@@ -1,5 +1,4 @@
 #pragma once
-#include "Helper_Sort.hpp"
 #include <iterator>
 
 template<typename Iterator, typename Comparator>
@@ -16,16 +15,16 @@ Iterator function_partition(Iterator iterator_begin, Iterator iterator_end, Comp
     return std::move(iterator_begin);
 }
 
-template<typename Iterator, typename Comparator>
-void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
+void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     if (std::distance(iterator_begin, iterator_end) > 1) { 
         Iterator iterator_pivot = std::move(function_partition(iterator_begin, iterator_end, function_comparation));
-        sort_quick_recursive(iterator_begin, iterator_pivot - 1, function_comparation); // iterator_pivot - 1 => iterator_pivot
+        sort_quick_recursive(iterator_begin, iterator_pivot, function_comparation);
         sort_quick_recursive(iterator_pivot + 1, iterator_end, function_comparation);
     }
 }
 
-template<typename Iterator>
-void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end) {
-    sort_quick_recursive(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
+template<typename Container, typename Comparator = std::less<typename Container::value_type>>
+void sort_quick_recursive(Container& container, Comparator function_comparation = Comparator()) {
+    sort_quick_recursive(std::begin(container), std::end(container), function_comparation);
 }

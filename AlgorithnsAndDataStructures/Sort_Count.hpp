@@ -1,9 +1,7 @@
 #pragma once
 #include <iterator>
-#include <algorithm>
 #include <tuple>
 #include <vector>
-
 #include <type_traits>
 
 template<typename Iterator, typename Comparator = typename std::less<typename std::iterator_traits<Iterator>::value_type>>
@@ -60,7 +58,7 @@ void sort_count(Iterator iterator_begin, Iterator iterator_end, Comparator funct
     }
 }
 
-template<typename Container, typename Comparator = typename std::less<typename std::iterator_traits<Container>::value_type>>
+template<typename Container, typename Comparator = typename std::less<typename Container::value_type>>
 void sort_count(Container& container, Comparator function_comparation = Comparator()) {
     sort_count(std::begin(container), std::end(container), function_comparation);
 }

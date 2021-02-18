@@ -1,7 +1,4 @@
 #pragma once
-
-#include "Helper_Sort.hpp"
-
 #include <vector>
 #include <functional>
 #include <type_traits>
@@ -27,8 +24,8 @@ void function_merge_two_way(Iterator iterator_begin, Iterator iterator_midle, It
     }
 }
 
-template<typename Iterator, typename Comparator>
-void sort_merge_iterative(const Iterator iterator_begin, const Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
+void sort_merge_iterative(const Iterator iterator_begin, const Iterator iterator_end, Comparator function_comparation = Comparator()) {
     if (iterator_begin == iterator_end || iterator_begin + 1 == iterator_end) { return; }
 
     for (ptrdiff_t curent_size_partition = 1; curent_size_partition < iterator_end - iterator_begin; curent_size_partition *= 2) {
@@ -42,7 +39,7 @@ void sort_merge_iterative(const Iterator iterator_begin, const Iterator iterator
     }
 }
 
-template<typename Iterator>
-void sort_merge_iterative(Iterator iterator_begin, Iterator iterator_end) {
-    sort_merge_iterative(iterator_begin, iterator_end, std::less<typename std::iterator_traits<Iterator>::value_type>{});
+template<typename Container, typename Comparator = std::less<typename Container::value_type>>
+void sort_merge_iterative(Container& container, Comparator function_comparation = Comparator()) {
+    sort_merge_iterative(std::begin(container), std::end(container), function_comparation);
 }

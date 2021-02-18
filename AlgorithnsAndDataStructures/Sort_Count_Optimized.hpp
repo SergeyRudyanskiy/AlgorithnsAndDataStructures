@@ -3,11 +3,10 @@
 #include <algorithm>
 #include <tuple>
 #include <vector>
-
 #include <type_traits>
 
 template<typename Iterator>
-void sort_count(Iterator iterator_begin, Iterator iterator_end) {
+void sort_count_optimized(Iterator iterator_begin, Iterator iterator_end) {
     const std::pair<Iterator, Iterator> pair_minimum_maximum = std::minmax_element(iterator_begin, iterator_end);
     const typename std::iterator_traits<Iterator>::value_type range_minimum = *pair_minimum_maximum.first;
     const typename std::iterator_traits<Iterator>::value_type range_maximum = *pair_minimum_maximum.second;
@@ -27,6 +26,6 @@ void sort_count(Iterator iterator_begin, Iterator iterator_end) {
 }
 
 template<typename Container>
-void sort_count(Container& container) {
+void sort_count_optimized(Container& container) {
     sort_count(std::begin(container), std::end(container));
 }
