@@ -2,8 +2,8 @@
 #include <tuple>
 #include <iterator>
 
-template<typename Iterator, typename Comparator>
-std::pair<Iterator, Iterator> search_element_maximum_minimum(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
+std::pair<Iterator, Iterator> search_element_maximum_minimum(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     Iterator iterator_minimum = iterator_begin;
     Iterator iterator_maximum = iterator_begin;
 
@@ -30,10 +30,4 @@ std::pair<Iterator, Iterator> search_element_maximum_minimum(Iterator iterator_b
     }
 
     return { iterator_minimum, iterator_maximum };
-}
-
-
-template<typename Iterator>
-std::pair<Iterator, Iterator> search_element_maximum_minimum(Iterator iterator_begin, Iterator iterator_end) {
-    return search_element_maximum_minimum(iterator_begin, iterator_end, std::less<>{});
 }
