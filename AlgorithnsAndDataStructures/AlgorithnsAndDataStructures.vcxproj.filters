@@ -44,9 +44,6 @@
     <ClInclude Include="Sort_Insert.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
-    <ClInclude Include="Search_Element_Linear.hpp">
-      <Filter>Файлы заголовков\Algorithms_Search</Filter>
-    </ClInclude>
     <ClInclude Include="Search_Element_Binary_Itarative.hpp">
       <Filter>Файлы заголовков\Algorithms_Search</Filter>
     </ClInclude>
@@ -107,9 +104,6 @@
     <ClInclude Include="Sort_Count_Optimized_Map.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
-    <ClInclude Include="Sort_Radix_Binary.hpp">
-      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
-    </ClInclude>
     <ClInclude Include="Sort_Radix_Decimal.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
@@ -132,6 +126,21 @@
       <Filter>Файлы заголовков\Algorithms_Search</Filter>
     </ClInclude>
     <ClInclude Include="Search_Element_Ternary_Recursive.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Linear_Recursive.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Linear_SIMD.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Binary_Iterative_Optimized.hpp">
+      <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Function_Get_Signum.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Search_Element_Linear_Iterative.hpp">
       <Filter>Файлы заголовков\Algorithms_Search</Filter>
     </ClInclude>
   </ItemGroup>

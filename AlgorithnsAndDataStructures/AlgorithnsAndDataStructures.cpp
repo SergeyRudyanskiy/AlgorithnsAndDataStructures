@@ -26,6 +26,21 @@
 #include "Sort_Select.hpp"
 #pragma endregion
 
+#pragma region SEARCHING_ALGORITHM_IMPLEMENTATION
+#include "Search_Element_Linear_Iterative.hpp"
+#include "Search_Element_Linear_Recursive.hpp"
+
+#include "Search_Element_Binary_Itarative.hpp"
+#include "Search_Element_Binary_Iterative_Optimized.hpp"
+#include "Search_Element_Binary_Recursive.hpp"
+
+#include "Search_Element_Ternary_Iterative.hpp"
+#include "Search_Element_Ternary_Recursive.hpp"
+
+#include "Search_Element_Maximum.hpp"
+#include "Search_Element_Minimum.hpp"
+#include "Search_Element_Minimum_Maximum.hpp"
+#pragma endregion
 
 //template testing region
 //#pragma region Sort_
@@ -62,7 +77,7 @@
 
 int main() {
     std::vector<int16_t> vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-
+#pragma region Sort
 #pragma region Sort_Bubble
     //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
     //std::cout << "\n vector befor sort" << std::endl;
@@ -400,35 +415,35 @@ int main() {
 #pragma endregion
 
 #pragma region Sort_Radix_Decimal_MSD
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    std::cout << "\n vector befor sort" << std::endl;
-    print_data(vector_test.begin(), vector_test.end());
-    
-    // comparator less
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test.begin(), vector_test.end(), std::less<>{});
-    print_data(vector_test.begin(), vector_test.end());
-    
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test.begin(), vector_test.end());
-    print_data(vector_test.begin(), vector_test.end());
-    
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test, std::less<>{});
-    print_data(vector_test.begin(), vector_test.end());
-    
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test);
-    print_data(vector_test.begin(), vector_test.end());
-    
-    //comparator greater
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test.begin(), vector_test.end(), std::greater<>{});
-    print_data(vector_test.begin(), vector_test.end());
-    
-    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
-    sort_radix_decimal(vector_test, std::greater<>{});
-    print_data(vector_test.begin(), vector_test.end());
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //std::cout << "\n vector befor sort" << std::endl;
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    //// comparator less
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test.begin(), vector_test.end(), std::less<>{});
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test.begin(), vector_test.end());
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test, std::less<>{});
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test);
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    ////comparator greater
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test.begin(), vector_test.end(), std::greater<>{});
+    //print_data(vector_test.begin(), vector_test.end());
+    //
+    //vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    //sort_radix_decimal(vector_test, std::greater<>{});
+    //print_data(vector_test.begin(), vector_test.end());
 #pragma endregion
 
 #pragma region Sort_Select
@@ -462,6 +477,69 @@ int main() {
     //sort_select(vector_test, std::greater<>{});
     //print_data(vector_test.begin(), vector_test.end());
 #pragma endregion
+#pragma endregion Sort
+
+#pragma region Search
+    vector_test = { 0, -25, 45, 11, 0, 0, 57, 23, 91, 111, 62, -43 };
+    std::vector<int16_t>::iterator result;
+
+#pragma region Search_Linear
+    // Tested linear
+    //std::cout << "Linear" << std::endl;
+    //result = search_element_linear_iterative(vector_test.begin(), vector_test.end(), -25);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_linear_iterative(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    // 
+    //result = search_element_linear_recursive(vector_test.begin(), vector_test.end(), -43);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_linear_recursive(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+#pragma endregion Search_Linear
+    
+#pragma region Search_Binary
+    // binary
+    std::sort(vector_test.begin(), vector_test.end());
+    //std::cout << "Binary" << std::endl;
+    //result = search_element_binary_iterative(vector_test.begin(), vector_test.end(), -43);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_binary_iterative(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+
+    //result = search_element_binary_iterative_optimized(vector_test.begin(), vector_test.end(), -43);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_binary_iterative_optimized(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    
+    result = search_element_binary_recursive(vector_test.begin(), vector_test.end(), -43);
+    std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    result = search_element_binary_recursive(vector_test.begin(), vector_test.end(), 555);
+    std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+#pragma endregion Search_Binary
+    //// ternary
+    //std::cout << "Ternary" << std::endl;
+    //result = search_element_ternary_iterative(vector_test.begin(), vector_test.end(), -43);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_ternary_iterative(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //
+    //result = search_element_ternary_recursive(vector_test.begin(), vector_test.end(), -43);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+    //result = search_element_ternary_recursive(vector_test.begin(), vector_test.end(), 555);
+    //std::cout << (result == vector_test.end() ? -1 : *result) << "" << std::endl;
+
+#pragma region Search_Minimum_And_Maximum
+    //// tested minimum and maximum
+    //std::cout << "Minimum and Maximum" << std::endl;
+    //result = search_element_minimum(vector_test.begin(), vector_test.end());
+    //std::cout << *result << "" << std::endl;
+    //result = search_element_maximum(vector_test.begin(), vector_test.end());
+    //std::cout << *result << "" << std::endl;
+    //std::pair<std::vector<int16_t>::iterator, std::vector<int16_t>::iterator> res;
+    //res = search_element_maximum_minimum(vector_test.begin(), vector_test.end());
+    //std::cout << *res.first << " " << *res.second << std::endl;
+#pragma endregion Search_Minimum_And_Maximum
+#pragma endregion Search
 
     std::cout << std::endl;
     return 0;
