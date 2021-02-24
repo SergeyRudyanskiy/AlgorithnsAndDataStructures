@@ -1,6 +1,8 @@
 #pragma once
 #include <iterator>
 
+#ifndef _FUNCTION_PARTITION_
+#define _FUNCTION_PARTITION_
 template<typename Iterator, typename Comparator>
 Iterator function_partition(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
     Iterator iterator_pivot = std::prev(iterator_end, 1);
@@ -14,6 +16,7 @@ Iterator function_partition(Iterator iterator_begin, Iterator iterator_end, Comp
 
     return std::move(iterator_begin);
 }
+#endif _FUNCTION_PARTITION_
 
 template<typename Iterator, typename Comparator = std::less<typename std::iterator_traits<Iterator>::value_type>>
 void sort_quick_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
