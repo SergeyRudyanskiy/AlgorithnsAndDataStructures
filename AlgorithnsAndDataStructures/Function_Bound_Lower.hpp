@@ -25,5 +25,5 @@ Iterator lower_bound(Iterator iterator_begin, Iterator iterator_end, const Eleme
 
 template <typename Iterator, typename ElementType>
 Iterator lower_bound(Iterator iterator_begin, Iterator iterator_end, const ElementType& value) {
-    lower_bound(iterator_begin, iterator_end, value, std::less<typename std::iterator_traits<Iterator>::value_type>{})
+    lower_bound(iterator_begin, iterator_end, value, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }

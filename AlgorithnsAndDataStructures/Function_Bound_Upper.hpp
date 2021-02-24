@@ -25,5 +25,5 @@ Iterator upper_bound(Iterator iterator_begin, Iterator iterator_end, const Eleme
 
 template <typename Iterator, typename ElementType>
 Iterator upper_bound(Iterator iterator_begin, Iterator iterator_end, const ElementType& value) {
-    upper_bound(iterator_begin, iterator_end, value, std::less<typename std::iterator_traits<Iterator>::value_type>{})
+    upper_bound(iterator_begin, iterator_end, value, std::less<typename std::iterator_traits<Iterator>::value_type>{});
 }
