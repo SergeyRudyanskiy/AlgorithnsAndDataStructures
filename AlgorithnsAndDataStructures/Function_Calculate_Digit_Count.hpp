@@ -5,10 +5,10 @@
 
 template<typename ElementType>
 uint8_t calculate_digit_count_version_0(ElementType value) {
-    uint8_t digit_count = 0u;
+    uint8_t digit_count = 1u;
     while (value / 10) { ++digit_count; }
 
-    return digit_count == 0u ? 1u : digit_count;
+    return digit_count;
 }
 
 template<typename ElementType>
@@ -18,7 +18,7 @@ uint8_t calculate_digit_count_version_1(ElementType value) {
 
 template<typename ElementType>
 uint8_t calculate_digit_count_version_2(ElementType value) {
-    return std::floor(std::log10(value) + 1u);
+    return std::floor(std::log10(std::abs(value)) + 1u);
 }
 
 template<typename ElementType>
