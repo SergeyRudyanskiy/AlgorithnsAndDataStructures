@@ -104,9 +104,6 @@
     <ClInclude Include="Sort_Count_Optimized_Map.hpp">
       <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
-    <ClInclude Include="Sort_Radix_Decimal.hpp">
-      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
-    </ClInclude>
     <ClInclude Include="Tree_Binary.hpp">
       <Filter>Файлы заголовков\Data_Structures</Filter>
     </ClInclude>
@@ -142,6 +139,24 @@
     </ClInclude>
     <ClInclude Include="Search_Element_Linear_Iterative.hpp">
       <Filter>Файлы заголовков\Algorithms_Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Function_Odd_Even.hpp">
+      <Filter>Файлы заголовков\Functional_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Quick_Hoare.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Quick_Two_Pivot.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Quick_Three_Way.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Decimal_Vector.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort_Radix_Decimal_Map.hpp">
+      <Filter>Файлы заголовков\Algorithms_Sort</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

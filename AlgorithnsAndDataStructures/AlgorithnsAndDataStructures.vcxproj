@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Display_Data.hpp" />
+    <ClInclude Include="Function_Odd_Even.hpp" />
     <ClInclude Include="Function_Bound_Lower.hpp" />
     <ClInclude Include="Function_Bound_Upper.hpp" />
     <ClInclude Include="Function_Calculate_Digit_Count.hpp" />
@@ -163,12 +164,16 @@
     <ClInclude Include="Sort_Count_Optimized_Map.hpp" />
     <ClInclude Include="Sort_Merge_Iterative.hpp" />
     <ClInclude Include="Sort_Merge_Recursive.hpp" />
+    <ClInclude Include="Sort_Quick_Hoare.hpp" />
     <ClInclude Include="Sort_Quick_Iterative.hpp" />
     <ClInclude Include="Sort_Quick_Recursive.hpp" />
+    <ClInclude Include="Sort_Quick_Three_Way.hpp" />
+    <ClInclude Include="Sort_Quick_Two_Pivot.hpp" />
     <ClInclude Include="Sort_Radix_Binary_Comparator_Class.hpp" />
     <ClInclude Include="Sort_Radix_Binary_Least_Significant_Digit.hpp" />
     <ClInclude Include="Sort_Radix_Binary_Most_Significant_Digit.hpp" />
-    <ClInclude Include="Sort_Radix_Decimal.hpp" />
+    <ClInclude Include="Sort_Radix_Decimal_Vector.hpp" />
+    <ClInclude Include="Sort_Radix_Decimal_Map.hpp" />
     <ClInclude Include="TODO.hpp" />
     <ClInclude Include="ImplementationStack.h" />
     <ClInclude Include="Search_Element_Binary_Itarative.hpp" />
