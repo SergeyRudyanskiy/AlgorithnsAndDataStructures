@@ -11,9 +11,9 @@ void sort_quick_three_way_recursive(Iterator iterator_begin, Iterator iterator_e
     Iterator iterator_curent  = iterator_begin;
 
     while (iterator_curent < iterator_greater) {
-        if      (*iterator_curent > *iterator_pivot) { std::iter_swap(iterator_curent, --iterator_greater); }
-        else if (*iterator_curent < *iterator_pivot) { std::iter_swap(iterator_curent++, iterator_less++ ); }
-        else                                         { ++iterator_curent; }
+        if      (function_comparation(*iterator_pivot, *iterator_curent)) { std::iter_swap(iterator_curent, --iterator_greater); }
+        else if (function_comparation(*iterator_curent, *iterator_pivot)) { std::iter_swap(iterator_curent++, iterator_less++ ); }
+        else                                                              { ++iterator_curent; }
     }
 
     sort_quick_three_way_recursive(iterator_begin,  iterator_less, function_comparation);
