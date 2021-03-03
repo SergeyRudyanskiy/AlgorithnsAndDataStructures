@@ -1,7 +1,5 @@
 #pragma once
 #include <iterator>
-#include <iostream>
-#include "Display_Data.hpp"
 
 template <typename Iterator, typename Comparator = std::less<>>
 void sort_quick_three_way_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
