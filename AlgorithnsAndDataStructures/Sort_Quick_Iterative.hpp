@@ -25,7 +25,7 @@ void sort_quick_iterative(Iterator iterator_begin, Iterator iterator_end, Compar
 
     std::stack<std::pair<Iterator, Iterator>> stack_partition_unsorted;
     stack_partition_unsorted.push(std::make_pair(iterator_begin, iterator_end));
-    Iterator iterator_pivot;
+    Iterator iterator_pivot = nullptr;
 
     while (!stack_partition_unsorted.empty()) {
         iterator_begin = stack_partition_unsorted.top().first;
