@@ -25,16 +25,14 @@ void sort_quick_three_way_iterative(Iterator iterator_begin, Iterator iterator_e
     std::stack<std::pair<Iterator, Iterator>> stack_partition_unsorted;
     stack_partition_unsorted.push(std::make_pair(iterator_begin, iterator_end));
 
-    std::pair<Iterator, Iterator> pair_range_iterator;
+    Iterator iterator_range_pivot_less;
+    Iterator iterator_range_pivot_greater;
 
     while (!stack_partition_unsorted.empty()) {
-        iterator_begin = stack_partition_unsorted.top().first;
-        iterator_end   = stack_partition_unsorted.top().second;
+        std::tie(iterator_begin, iterator_end) = stack_partition_unsorted.top();
         stack_partition_unsorted.pop();
 
-        pair_range_iterator = function_partition_three_way(iterator_begin, iterator_end, function_comparation);
-        Iterator iterator_range_pivot_less    = pair_range_iterator.first;
-        Iterator iterator_range_pivot_greater = pair_range_iterator.second;
+        std::tie(iterator_range_pivot_less, iterator_range_pivot_greater) = function_partition_three_way(iterator_begin, iterator_end, function_comparation);
 
         if (iterator_range_pivot_less    > iterator_begin) { stack_partition_unsorted.push(std::make_pair(iterator_begin,  iterator_range_pivot_less)); }
         if (iterator_range_pivot_greater < iterator_end  ) { stack_partition_unsorted.push(std::make_pair(iterator_range_pivot_greater, iterator_end)); }
