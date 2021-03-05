@@ -1,23 +1,34 @@
 #pragma once
 #include <iterator>
 
+#ifndef _FUNCTION_PARTITION_THREE_WAY_
+#define _FUNCTION_PARTITION_THREE_WAY_
+template<typename Iterator, typename Comparator>
+std::pair<Iterator, Iterator> function_partition_three_way(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation) {
+    if (std::distance(iterator_begin, iterator_end) <= 1) { return; }
+
+    Iterator iterator_pivot = std::prev(iterator_end);
+
+    for (Iterator iterator_curent = iterator_begin; iterator_curent < iterator_end;) {
+        if      (function_comparation(*iterator_pivot, *iterator_curent)) { std::iter_swap(iterator_curent, --iterator_end);     }
+        else if (function_comparation(*iterator_curent, *iterator_pivot)) { std::iter_swap(iterator_curent++, iterator_begin++); }
+        else                                                              { ++iterator_curent;                                   }
+    }
+
+    return std::move(std::make_pair(iterator_begin, iterator_end));
+}
+#endif _FUNCTION_PARTITION_THREE_WAY_
+
 template <typename Iterator, typename Comparator = std::less<>>
 void sort_quick_three_way_recursive(Iterator iterator_begin, Iterator iterator_end, Comparator function_comparation = Comparator()) {
     if (std::distance(iterator_begin, iterator_end) <= 1) { return; }
 
-    Iterator iterator_pivot   = std::next(iterator_begin, (iterator_end - iterator_begin) / 2);
-    Iterator iterator_less    = iterator_begin;
-    Iterator iterator_greater = iterator_end;
-    Iterator iterator_curent  = iterator_begin;
+    std::pair<Iterator, Iterator> pair_range_iterator = function_partition_three_way_optimized(iterator_begin, iterator_end, function_comparation);
+    Iterator iterator_range_pivot_less    = pair_range_iterator.first;
+    Iterator iterator_range_pivot_greater = pair_range_iterator.second;
 
-    while (iterator_curent < iterator_greater) {
-        if      (function_comparation(*iterator_pivot, *iterator_curent)) { std::iter_swap(iterator_curent, --iterator_greater); }
-        else if (function_comparation(*iterator_curent, *iterator_pivot)) { std::iter_swap(iterator_curent++, iterator_less++ ); }
-        else                                                              { ++iterator_curent; }
-    }
-
-    sort_quick_three_way_recursive(iterator_begin,  iterator_less, function_comparation);
-    sort_quick_three_way_recursive(iterator_greater, iterator_end, function_comparation);
+    sort_quick_three_way_recursive_optimized(iterator_begin, iterator_range_pivot_less, function_comparation);
+    sort_quick_three_way_recursive_optimized(iterator_range_pivot_greater, iterator_end, function_comparation);
 }
 
 template<typename Container, typename Comparator = std::less<typename Container::value_type>>
